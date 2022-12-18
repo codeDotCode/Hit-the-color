@@ -1,0 +1,16 @@
+Będę robił tę gierkę z porównaniem kolorów. 
+1. Gracz losuje paletę kolorów np wylosuje kolor czerwony i będzie grał na odcieniach czerwonego.
+2. Na starcie pokaże sie karta zakryta prezentująca paletę barwy czerwonej(wylosowanej).
+3. Po kliknięciu karta sie odwraca i losuje jeden z odcieni. Ten odcień będzie widoczny powiedzmy przez 5 sek.
+4. Karta znika i wyskakuje 8 losowych odcieni w tym ten jeden z karty(tutaj się zastanawiam jak to zrobic żeby losowało 8 i jeden z nich to był ten sam co na karcie)
+5. Gracz ma 2 próby żeby zgadnąć i odliczany jest czas ile mu to zajmie.
+6. I błąd - dolicza powiedzmy 5 sek
+7. II błąd zamyka paletę i losuje kolejną np zieloną
+8. Palet jest 5. Biały(odcienie szarości), żółty, czerwony, zielony, niebieski.
+9. Gracz nigdy nie wylosuje tej samej palety.
+10. Gra sie kończy po przejściu tych 5 palet.
+11. Punkty będą naliczane.. jeszcze nie wiem jak, ale dodam może bonus jak ktoś będzie zgadywał za 1 razem i to w ciagu 3 sek.
+
+
+Nie wiem ile mi to zajmie zrobienie tej gry. 3 dni...Tydzień... dwa? zobaczymy.
+Ile dałbyś czasu juniorowi na zrobienie tego?
