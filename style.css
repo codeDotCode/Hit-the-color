@@ -1,0 +1,90 @@
+body
+{
+    background-color: rgb(63, 73, 63);
+    color: whitesmoke;
+    font-size: 24px;
+    margin: 0;   
+}
+
+ul
+{
+    background-color: rgb(69, 126, 175);
+    list-style-type: none;
+    text-align: center;
+    margin: 0px;
+    padding-left: 0px;
+    padding: 15px;
+    
+}
+#menu>li
+{
+    display: inline-block;
+    margin-left: 70px;
+}
+#menu>li:first-child
+{
+    margin-left: 0px;
+}
+main
+{
+    text-align: center;
+}
+h1
+{
+    color:rgb(239, 241, 234);
+    text-align: center;
+}
+h2
+{
+    text-align: center;
+    color: rgb(255, 0, 255);
+    font-size: 3em;
+}
+#losuj
+{
+    background-color: rgb(68, 45, 10);
+    color: rgb(182, 136, 36);
+    text-align: center;
+    font-size: 1.5em;
+    -webkit-box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
+    -moz-box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
+    box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
+    border: none;
+    border-radius: 10px;
+    padding:8px;  
+}
+#czas
+{
+    height: 50px;
+    width: 100px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
+    -moz-box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
+    box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
+}
+#gra
+{
+    height: 600px;
+    width: 1000px;
+    text-align: center;
+    margin: auto;
+    margin-top: 80px;   
+}
+#karta
+{
+    height: 400px;
+    width: 300px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
+    -moz-box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
+    box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
+    float: left;   
+}
+#kolory
+{
+    height: 400px;
+    width: 600px;
+    -webkit-box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
+    -moz-box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
+    box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
+    float: left;
+    margin-left: 50px;   
+}
