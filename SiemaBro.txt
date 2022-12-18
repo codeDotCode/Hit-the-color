@@ -3,6 +3,7 @@ Będę robił tę gierkę z porównaniem kolorów.
 2. Na starcie pokaże sie karta zakryta prezentująca paletę barwy czerwonej(wylosowanej).
 3. Po kliknięciu karta sie odwraca i losuje jeden z odcieni. Ten odcień będzie widoczny powiedzmy przez 5 sek.
 4. Karta znika i wyskakuje 8 losowych odcieni w tym ten jeden z karty(tutaj się zastanawiam jak to zrobic żeby losowało 8 i jeden z nich to był ten sam co na karcie)
+  - Mozesz zaczac majac jeden odcien (prawidlowy) i dolosowac do niego 7 innych :) Potem tylko przemieszać kolejnosc.
 5. Gracz ma 2 próby żeby zgadnąć i odliczany jest czas ile mu to zajmie.
 6. I błąd - dolicza powiedzmy 5 sek
 7. II błąd zamyka paletę i losuje kolejną np zieloną
@@ -14,3 +15,7 @@ Będę robił tę gierkę z porównaniem kolorów.
 
 Nie wiem ile mi to zajmie zrobienie tej gry. 3 dni...Tydzień... dwa? zobaczymy.
 Ile dałbyś czasu juniorowi na zrobienie tego?
+  - Roznie. Nie wiadomo ile czasu dziennie bedziesz poswiecal, itp. :) Takiemu juniorowi, ktory pracuje pełnoetatowo dałbym z tydzień na pewno.
+    Dodatkowo jest tu pare rzeczy, które nie beda trywialne.
+    
+    Przykładowo: losowanie odcieni, ktore sa bardzo zblizone, ale jednak rozróżnialne dla ludzkiego oka. No chyba, ze te palety sam sobie wygenerujesz (polecałbym od tego zacząć, a potem dopisać losowanie).
