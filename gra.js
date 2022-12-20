@@ -1,6 +1,7 @@
 let background = ['url("colors/green.png")', 'url("colors/red.png")', 'url("colors/blue.png")', 'url("colors/yellow.png")', 'url("colors/grey.png")'];
 let mainCard = document.querySelector("#karta");
 let liczba = -1;
+let licznik = document.querySelector("#czas");
 
 let los1 = document.querySelector("#c1");
 let los2 = document.querySelector("#c2");
@@ -12,10 +13,21 @@ let los7 = document.querySelector("#c7");
 let los8 = document.querySelector("#c8");
 
 let przyciskLosuj = document.querySelector('#losuj');
+
+
+przyciskLosuj.addEventListener('click', odliczanie);
+
+function odliczanie(){
+let sekunda = 0;
+function zegar(){
+    sekunda++
+    licznik.innerHTML= sekunda/10;
+    
+}
+setInterval(zegar,100);
+}
+
 przyciskLosuj.addEventListener('click', losujPalete);
-
-
-
 function losujPalete() {
     let green1 = "hsl"+"("+"80"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
     let green2 =  "hsl"+"("+"90"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";

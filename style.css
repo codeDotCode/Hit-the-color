@@ -28,7 +28,8 @@ ul
 }
 main
 {
-    text-align: center;
+    text-align:center;
+    
 }
 h1
 {
@@ -41,11 +42,15 @@ h2
     color: rgb(255, 0, 255);
     font-size: 3em;
 }
+#punkty
+{
+    display: inline-flex;
+}
 #losuj
 {
     background-color: rgb(68, 45, 10);
     color: rgb(182, 136, 36);
-    text-align: center;
+    text-align:center;
     font-size: 1.5em;
     box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
     border: none;
@@ -57,7 +62,13 @@ h2
     height: 50px;
     width: 100px;
     box-shadow: 8px 8px 24px 0px rgb(182, 136, 36);
-    margin-left: 50px;
+    margin-left: 100px;
+    padding: 30px;
+    text-align:center;
+    font-size: 2em;
+    color:rgb(182, 136, 36);
+    border-radius: 10px;
+    background-color: rgb(68, 45, 10);
 }
 #gra
 {
