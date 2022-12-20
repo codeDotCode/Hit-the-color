@@ -17,72 +17,109 @@ przyciskLosuj.addEventListener('click', losujPalete);
 
 
 function losujPalete() {
-    let green1 = "#00" + Math.floor(2+Math.random()*9).toString() + Math.floor(Math.random()*9).toString();
-    let green2 = "#00" + Math.floor(Math.random()*9).toString() + Math.floor(1+Math.random()*9).toString();
-    let green3 = "#00" + Math.floor(3+Math.random()*9).toString() + Math.floor(Math.random()*9).toString();
-    let green4 = "#00" + Math.floor(Math.random()*9).toString() + Math.floor(4+Math.random()*9).toString();
-    let green5 = "#00" + Math.floor(Math.random()*9).toString() + Math.floor(Math.random()*9).toString();
-    let green6 = "#00" + Math.floor(Math.random()*9).toString() + Math.floor(Math.random()*9).toString();
-    let green7 = "#00" + Math.floor(Math.random()*9).toString() + Math.floor(Math.random()*9).toString();
-    let green8 = "#00" + Math.floor(Math.random()*9).toString() + Math.floor(Math.random()*9).toString();
+    let green1 = "hsl"+"("+"80"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let green2 =  "hsl"+"("+"90"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let green3 =  "hsl"+"("+"100"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let green4 =  "hsl"+"("+"110"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let green5 =  "hsl"+"("+"120"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let green6 =  "hsl"+"("+"130"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let green7 =  "hsl"+"("+"140"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let green8 =  "hsl"+"("+"150"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    
+    let red1 = "hsl"+"("+"0"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let red2 =  "hsl"+"("+"1"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let red3 =  "hsl"+"("+"2"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let red4 =  "hsl"+"("+"3"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let red5 =  "hsl"+"("+"4"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let red6 =  "hsl"+"("+"5"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let red7 =  "hsl"+"("+"6"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let red8 =  "hsl"+"("+"7"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    
+    let blue1 = "hsl"+"("+"190"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let blue2 =  "hsl"+"("+"200"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let blue3 =  "hsl"+"("+"210"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let blue4 =  "hsl"+"("+"220"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let blue5 =  "hsl"+"("+"230"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let blue6 =  "hsl"+"("+"240"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let blue7 =  "hsl"+"("+"250"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let blue8 =  "hsl"+"("+"260"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+
+    let yellow1 = "hsl"+"("+"60"+","+ "100"+"%" +","+ Math.floor((Math.random()*100)/1.4).toString()+"%"+")";
+    let yellow2 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/1.7).toString()+"%"+")";
+    let yellow3 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/1.9).toString()+"%"+")";
+    let yellow4 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/2.1).toString()+"%"+")";
+    let yellow5 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/2.3).toString()+"%"+")";
+    let yellow6 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/2.5).toString()+"%"+")";
+    let yellow7 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/2.7).toString()+"%"+")";
+    let yellow8 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/3).toString()+"%"+")";
+
+    let grey1 = "hsl"+"("+"50"+","+ "2"+"%" +","+ Math.floor((Math.random()*100)/1.4).toString()+"%"+")";
+    let grey2 = "hsl"+"("+"50"+","+ "5"+"%" +","+ Math.floor((Math.random()*100)/1.7).toString()+"%"+")";
+    let grey3 = "hsl"+"("+"50"+","+ "8"+"%" +","+ Math.floor((Math.random()*100)/1.9).toString()+"%"+")";
+    let grey4 = "hsl"+"("+"50"+","+ "11"+"%" +","+ Math.floor((Math.random()*100)/2.1).toString()+"%"+")";
+    let grey5 = "hsl"+"("+"50"+","+ "14"+"%" +","+ Math.floor((Math.random()*100)/2.3).toString()+"%"+")";
+    let grey6 = "hsl"+"("+"50"+","+ "17"+"%" +","+ Math.floor((Math.random()*100)/2.5).toString()+"%"+")";
+    let grey7 = "hsl"+"("+"50"+","+ "20"+"%" +","+ Math.floor((Math.random()*100)/2.7).toString()+"%"+")";
+    let grey8 = "hsl"+"("+"50"+","+ "23"+"%" +","+ Math.floor((Math.random()*100)/3).toString()+"%"+")";
+
     liczba++;
     
    
     if(liczba>4) {
         przyciskLosuj.innerHTML="koniec gry";
-        losujPalete(false);
+        przyciskLosuj.removeEventListener('click', losujPalete);
     }
    
     mainCard.style.backgroundImage= background[liczba];
     
     if(liczba ===0){
-        los1.style.backgroundColor = green1 + "00";
-        los2.style.backgroundColor = green2 + "00";
-        los3.style.backgroundColor = green3 + "00";
-        los4.style.backgroundColor = green4 + "00";
-        los5.style.backgroundColor = green5 + "00";
-        los6.style.backgroundColor = green6 + "00";
-        los7.style.backgroundColor = green7 + "00";
-        los8.style.backgroundColor = green8 + "00";
+        los1.style.backgroundColor = green1;
+        los2.style.backgroundColor = green2;
+        los3.style.backgroundColor = green3;
+        los4.style.backgroundColor = green4; 
+        los5.style.backgroundColor = green5; 
+        los6.style.backgroundColor = green6; 
+        los7.style.backgroundColor = green7; 
+        los8.style.backgroundColor = green8; 
     }
     if(liczba ===1){
-        los1.style.backgroundColor = "#ff0000";
-        los2.style.backgroundColor = "#ff0000";
-        los3.style.backgroundColor = "#ff0000";
-        los4.style.backgroundColor = "#ff0000";
-        los5.style.backgroundColor = "#ff0000";
-        los6.style.backgroundColor = "#ff0000";
-        los7.style.backgroundColor = "#ff0000";
-        los8.style.backgroundColor = "#ff0000";
+        los1.style.backgroundColor = red1;
+        los2.style.backgroundColor = red2;
+        los3.style.backgroundColor = red3;
+        los4.style.backgroundColor = red4;
+        los5.style.backgroundColor = red5;
+        los6.style.backgroundColor = red6;
+        los7.style.backgroundColor = red7;
+        los8.style.backgroundColor = red8;
     }
     if(liczba ===2){
-        los1.style.backgroundColor = "blue";
-        los2.style.backgroundColor = "blue";
-        los3.style.backgroundColor = "blue";
-        los4.style.backgroundColor = "blue";
-        los5.style.backgroundColor = "blue";
-        los6.style.backgroundColor = "blue";
-        los7.style.backgroundColor = "blue";
-        los8.style.backgroundColor = "blue";
+        los1.style.backgroundColor = blue1;
+        los2.style.backgroundColor = blue2;
+        los3.style.backgroundColor = blue3;
+        los4.style.backgroundColor = blue4;
+        los5.style.backgroundColor = blue5;
+        los6.style.backgroundColor = blue6;
+        los7.style.backgroundColor = blue7;
+        los8.style.backgroundColor = blue8;
     }
     if(liczba ===3){
-        los1.style.backgroundColor = "yellow";
-        los2.style.backgroundColor = "yellow";
-        los3.style.backgroundColor = "yellow";
-        los4.style.backgroundColor = "yellow";
-        los5.style.backgroundColor = "yellow";
-        los6.style.backgroundColor = "yellow";
-        los7.style.backgroundColor = "yellow";
-        los8.style.backgroundColor = "yellow";
+        los1.style.backgroundColor = yellow1;
+        los2.style.backgroundColor = yellow2;
+        los3.style.backgroundColor = yellow3;
+        los4.style.backgroundColor = yellow4;
+        los5.style.backgroundColor = yellow5;
+        los6.style.backgroundColor = yellow6;
+        los7.style.backgroundColor = yellow7;
+        los8.style.backgroundColor = yellow8;
     }
     if(liczba ===4){
-        los1.style.backgroundColor = "grey";
-        los2.style.backgroundColor = "grey";
-        los3.style.backgroundColor = "grey";
-        los4.style.backgroundColor = "grey";
-        los5.style.backgroundColor = "grey";
-        los6.style.backgroundColor = "grey";
-        los7.style.backgroundColor = "grey";
-        los8.style.backgroundColor = "grey";
+        los1.style.backgroundColor = grey1;
+        los2.style.backgroundColor = grey2;
+        los3.style.backgroundColor = grey3;
+        los4.style.backgroundColor = grey4;
+        los5.style.backgroundColor = grey5;
+        los6.style.backgroundColor = grey6;
+        los7.style.backgroundColor = grey7;
+        los8.style.backgroundColor = grey8;
     }
 }
