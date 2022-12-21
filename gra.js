@@ -1,5 +1,6 @@
 //let background = ['url("colors/green.png")', 'url("colors/red.png")', 'url("colors/blue.png")', 'url("colors/yellow.png")', 'url("colors/grey.png")'];
 let mainCard = document.querySelector("#karta");
+let colorMain = mainCard.style.backgroundColor;
 let liczba = -1;
 let licznik = document.querySelector("#czas");
 
@@ -13,22 +14,27 @@ let los6 = document.querySelector("#c6");
 let los7 = document.querySelector("#c7");
 let los8 = document.querySelector("#c8");
 
+los1.addEventListener('click',check);
+los2.addEventListener('click',check);
+los3.addEventListener('click',check);
+los4.addEventListener('click',check);
+los5.addEventListener('click',check);
+los6.addEventListener('click',check);
+los7.addEventListener('click',check);
+los8.addEventListener('click',check);
+
+
+
 let przyciskLosuj = document.querySelector('#losuj');
-
-
 przyciskLosuj.addEventListener('click', odliczanie);
 
 function odliczanie(){
-let sekunda = 0;
-function zegar(){
+    let sekunda = 0;
+    function zegar(){
     sekunda++
-    
-    licznik.innerHTML= (sekunda/10).toFixed(1);
-    setInterval(przecinek, 10);
-    
-    
-}
-setInterval(zegar,100);
+    licznik.innerHTML= (sekunda/10).toFixed(1);  
+    }
+    setInterval(zegar,100);
 }
 
 przyciskLosuj.addEventListener('click', losujPalete);
@@ -112,7 +118,7 @@ function losujPalete() {
         los8.style.backgroundColor = red8;
 
         let redPalete = [red1, red2, red3, red4, red5, red6, red7, red8];
-        mainCard.style.backgroundColor = redPalete[Math.floor(Math.random()*8)];
+        mainCard.style.backgroundColor= redPalete[Math.floor(Math.random()*8)];
     }
     if(liczba ===2){
         los1.style.backgroundColor = blue1;
@@ -155,4 +161,11 @@ function losujPalete() {
     }
 
     
+}
+
+function check(){
+    
+    let colorCode = los1.style.backgroundColor;
+    if(colorCode === mainCard.style.backgroundColor) {alert("Tak jest!To ten kolor!")}
+    else {alert("Przykro mi! To nie ten kolor")}
 }
