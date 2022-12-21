@@ -37,52 +37,64 @@ function odliczanie(){
     setInterval(zegar,100);
 }
 
+function losujKolory(h){
+    const s =  Math.floor(50+Math.random()*50).toString()+"%";
+    const l =  Math.floor(50+Math.random()*50).toString()+"%";
+    return "hsl(" + h + "," + s + "," + l + ")";
+
+}
+
+function losujKolory2(h,s){ 
+    const l =  Math.floor(Math.random()*100).toString()+"%";
+    return "hsl(" + h + "," + s + "%" + "," + l + ")";
+}
+
 przyciskLosuj.addEventListener('click', losujPalete);
 function losujPalete() {
-    let green1 = "hsl"+"("+"80"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let green2 =  "hsl"+"("+"90"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let green3 =  "hsl"+"("+"100"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let green4 =  "hsl"+"("+"110"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let green5 =  "hsl"+"("+"120"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let green6 =  "hsl"+"("+"130"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let green7 =  "hsl"+"("+"140"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let green8 =  "hsl"+"("+"150"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let green1 = losujKolory(80);
+    let green2 = losujKolory(90);
+    let green3 = losujKolory(100); 
+    let green4 = losujKolory(120);
+    let green5 = losujKolory(130);
+    let green6 = losujKolory(140);
+    let green7 = losujKolory(150);
+    let green8 = losujKolory(160);
     
-    let red1 = "hsl"+"("+"0"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let red2 =  "hsl"+"("+"1"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let red3 =  "hsl"+"("+"2"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let red4 =  "hsl"+"("+"3"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let red5 =  "hsl"+"("+"4"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let red6 =  "hsl"+"("+"5"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let red7 =  "hsl"+"("+"6"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let red8 =  "hsl"+"("+"7"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let red1 = losujKolory(0);
+    let red2 = losujKolory(1);
+    let red3 = losujKolory(2);
+    let red4 = losujKolory(3);
+    let red5 = losujKolory(4);
+    let red6 = losujKolory(5);
+    let red7 = losujKolory(6);
+    let red8 = losujKolory(7);
     
-    let blue1 = "hsl"+"("+"190"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let blue2 =  "hsl"+"("+"200"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let blue3 =  "hsl"+"("+"210"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let blue4 =  "hsl"+"("+"220"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let blue5 =  "hsl"+"("+"230"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let blue6 =  "hsl"+"("+"240"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let blue7 =  "hsl"+"("+"250"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
-    let blue8 =  "hsl"+"("+"260"+","+ Math.floor(50+Math.random()*50).toString()+"%" +","+ Math.floor(Math.random()*50).toString()+"%"+")";
+    let blue1 =losujKolory(190);
+    let blue2 =losujKolory(200);
+    let blue3 =losujKolory(210);
+    let blue4 =losujKolory(220);
+    let blue5 =losujKolory(230);
+    let blue6 =losujKolory(240);
+    let blue7 =losujKolory(250);
+    let blue8 =losujKolory(260);
 
-    let yellow1 = "hsl"+"("+"60"+","+ "100"+"%" +","+ Math.floor((Math.random()*100)/1.4).toString()+"%"+")";
-    let yellow2 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/1.7).toString()+"%"+")";
-    let yellow3 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/1.9).toString()+"%"+")";
-    let yellow4 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/2.1).toString()+"%"+")";
-    let yellow5 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/2.3).toString()+"%"+")";
-    let yellow6 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/2.5).toString()+"%"+")";
-    let yellow7 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/2.7).toString()+"%"+")";
-    let yellow8 =  "hsl"+"("+"60"+","+"100"+"%" +","+ Math.floor((Math.random()*100)/3).toString()+"%"+")";
+    let yellow1 = losujKolory2(60,100);
+    let yellow2 = losujKolory2(60,100);
+    let yellow3 = losujKolory2(60,100);
+    let yellow4 = losujKolory2(60,100);
+    let yellow5 = losujKolory2(60,100);
+    let yellow6 = losujKolory2(60,100);
+    let yellow7 = losujKolory2(60,100);
+    let yellow8 = losujKolory2(60,100);
 
-    let grey1 = "hsl"+"("+"50"+","+ "2"+"%" +","+ Math.floor((Math.random()*100)/1.4).toString()+"%"+")";
-    let grey2 = "hsl"+"("+"50"+","+ "5"+"%" +","+ Math.floor((Math.random()*100)/1.7).toString()+"%"+")";
-    let grey3 = "hsl"+"("+"50"+","+ "8"+"%" +","+ Math.floor((Math.random()*100)/1.9).toString()+"%"+")";
-    let grey4 = "hsl"+"("+"50"+","+ "11"+"%" +","+ Math.floor((Math.random()*100)/2.1).toString()+"%"+")";
-    let grey5 = "hsl"+"("+"50"+","+ "14"+"%" +","+ Math.floor((Math.random()*100)/2.3).toString()+"%"+")";
-    let grey6 = "hsl"+"("+"50"+","+ "17"+"%" +","+ Math.floor((Math.random()*100)/2.5).toString()+"%"+")";
-    let grey7 = "hsl"+"("+"50"+","+ "20"+"%" +","+ Math.floor((Math.random()*100)/2.7).toString()+"%"+")";
-    let grey8 = "hsl"+"("+"50"+","+ "23"+"%" +","+ Math.floor((Math.random()*100)/3).toString()+"%"+")";
+    let grey1 = losujKolory2(50,2);
+    let grey2 = losujKolory2(50,5);
+    let grey3 = losujKolory2(50,8);
+    let grey4 = losujKolory2(50,11);
+    let grey5 = losujKolory2(50,14);
+    let grey6 = losujKolory2(50,17);
+    let grey7 = losujKolory2(50,20);
+    let grey8 = losujKolory2(50,23);
 
     liczba++;
     
@@ -163,9 +175,9 @@ function losujPalete() {
     
 }
 
-function check(){
+function check(event){
     
-    let colorCode = los1.style.backgroundColor;
+    let colorCode = event.target.style.backgroundColor;
     if(colorCode === mainCard.style.backgroundColor) {alert("Tak jest!To ten kolor!")}
-    else {alert("Przykro mi! To nie ten kolor")}
+    else {alert("Przykro mi! To nie ten kolor")};
 }
