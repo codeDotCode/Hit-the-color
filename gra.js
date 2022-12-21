@@ -1,7 +1,8 @@
-let background = ['url("colors/green.png")', 'url("colors/red.png")', 'url("colors/blue.png")', 'url("colors/yellow.png")', 'url("colors/grey.png")'];
+//let background = ['url("colors/green.png")', 'url("colors/red.png")', 'url("colors/blue.png")', 'url("colors/yellow.png")', 'url("colors/grey.png")'];
 let mainCard = document.querySelector("#karta");
 let liczba = -1;
 let licznik = document.querySelector("#czas");
+
 
 let los1 = document.querySelector("#c1");
 let los2 = document.querySelector("#c2");
@@ -21,7 +22,10 @@ function odliczanie(){
 let sekunda = 0;
 function zegar(){
     sekunda++
-    licznik.innerHTML= sekunda/10;
+    
+    licznik.innerHTML= (sekunda/10).toFixed(1);
+    setInterval(przecinek, 10);
+    
     
 }
 setInterval(zegar,100);
@@ -82,7 +86,7 @@ function losujPalete() {
         przyciskLosuj.removeEventListener('click', losujPalete);
     }
    
-    mainCard.style.backgroundImage= background[liczba];
+    //mainCard.style.backgroundImage= background[liczba];
     
     if(liczba ===0){
         los1.style.backgroundColor = green1;
@@ -92,7 +96,10 @@ function losujPalete() {
         los5.style.backgroundColor = green5; 
         los6.style.backgroundColor = green6; 
         los7.style.backgroundColor = green7; 
-        los8.style.backgroundColor = green8; 
+        los8.style.backgroundColor = green8;
+
+        let greenPalete = [green1,green2, green3,green4,green5, green6,green7,green8];
+        mainCard.style.backgroundColor = greenPalete[Math.floor(Math.random()*8)];
     }
     if(liczba ===1){
         los1.style.backgroundColor = red1;
@@ -103,6 +110,9 @@ function losujPalete() {
         los6.style.backgroundColor = red6;
         los7.style.backgroundColor = red7;
         los8.style.backgroundColor = red8;
+
+        let redPalete = [red1, red2, red3, red4, red5, red6, red7, red8];
+        mainCard.style.backgroundColor = redPalete[Math.floor(Math.random()*8)];
     }
     if(liczba ===2){
         los1.style.backgroundColor = blue1;
@@ -113,6 +123,9 @@ function losujPalete() {
         los6.style.backgroundColor = blue6;
         los7.style.backgroundColor = blue7;
         los8.style.backgroundColor = blue8;
+
+        let bluePalete = [blue1, blue2, blue3, blue4, blue5, blue6, blue7, blue8];
+        mainCard.style.backgroundColor = bluePalete[Math.floor(Math.random()*8)];
     }
     if(liczba ===3){
         los1.style.backgroundColor = yellow1;
@@ -123,6 +136,9 @@ function losujPalete() {
         los6.style.backgroundColor = yellow6;
         los7.style.backgroundColor = yellow7;
         los8.style.backgroundColor = yellow8;
+
+        let yellowPalete = [yellow1,yellow2, yellow3, yellow4, yellow5, yellow6, yellow7, yellow8];
+        mainCard.style.backgroundColor = yellowPalete[Math.floor(Math.random()*8)];
     }
     if(liczba ===4){
         los1.style.backgroundColor = grey1;
@@ -133,5 +149,10 @@ function losujPalete() {
         los6.style.backgroundColor = grey6;
         los7.style.backgroundColor = grey7;
         los8.style.backgroundColor = grey8;
+
+        let greyPalete = [grey1,grey2, grey3, grey4, grey5, grey6, grey7, grey8];
+        mainCard.style.backgroundColor = greyPalete[Math.floor(Math.random()*8)];
     }
+
+    
 }
