@@ -2,7 +2,7 @@
 let mainCard = document.querySelector("#karta");
 let colorMain = mainCard.style.backgroundColor;
 let liczba = -1;
-let licznik = document.querySelector("#czas");
+let win = false;
 
 
 let los1 = document.querySelector("#c1");
@@ -27,21 +27,28 @@ los8.addEventListener('click',check);
 
 let przyciskLosuj = document.querySelector('#losuj');
 przyciskLosuj.addEventListener('click', odliczanie);
+let licznik = document.querySelector("#czas");
+let sekunda = 0;
 
 function odliczanie(){
-    let sekunda = 0;
+    win = false;
+     
     function zegar(){
-    sekunda++
-    licznik.innerHTML= (sekunda/10).toFixed(1);  
+        if(win){
+        clearInterval(timer);
+        }
+        else {   
+           sekunda++;
+            licznik.innerHTML= (sekunda/10).toFixed(1);
+        }
     }
-    setInterval(zegar,100);
+    let timer = setInterval(zegar,100);
 }
 
 function losujKolory(h){
     const s =  Math.floor(50+Math.random()*50).toString()+"%";
     const l =  Math.floor(50+Math.random()*50).toString()+"%";
     return "hsl(" + h + "," + s + "," + l + ")";
-
 }
 
 function losujKolory2(h,s){ 
@@ -51,6 +58,7 @@ function losujKolory2(h,s){
 
 przyciskLosuj.addEventListener('click', losujPalete);
 function losujPalete() {
+    
     let green1 = losujKolory(80);
     let green2 = losujKolory(90);
     let green3 = losujKolory(100); 
@@ -118,6 +126,9 @@ function losujPalete() {
 
         let greenPalete = [green1,green2, green3,green4,green5, green6,green7,green8];
         mainCard.style.backgroundColor = greenPalete[Math.floor(Math.random()*8)];
+        przyciskLosuj.removeEventListener('click', losujPalete);
+        przyciskLosuj.removeEventListener('click', odliczanie);
+        
     }
     if(liczba ===1){
         los1.style.backgroundColor = red1;
@@ -131,6 +142,9 @@ function losujPalete() {
 
         let redPalete = [red1, red2, red3, red4, red5, red6, red7, red8];
         mainCard.style.backgroundColor= redPalete[Math.floor(Math.random()*8)];
+        przyciskLosuj.removeEventListener('click', losujPalete);
+        przyciskLosuj.removeEventListener('click', odliczanie);
+        
     }
     if(liczba ===2){
         los1.style.backgroundColor = blue1;
@@ -144,6 +158,9 @@ function losujPalete() {
 
         let bluePalete = [blue1, blue2, blue3, blue4, blue5, blue6, blue7, blue8];
         mainCard.style.backgroundColor = bluePalete[Math.floor(Math.random()*8)];
+        przyciskLosuj.removeEventListener('click', losujPalete);
+        przyciskLosuj.removeEventListener('click', odliczanie);
+        
     }
     if(liczba ===3){
         los1.style.backgroundColor = yellow1;
@@ -157,6 +174,9 @@ function losujPalete() {
 
         let yellowPalete = [yellow1,yellow2, yellow3, yellow4, yellow5, yellow6, yellow7, yellow8];
         mainCard.style.backgroundColor = yellowPalete[Math.floor(Math.random()*8)];
+        przyciskLosuj.removeEventListener('click', losujPalete);
+        przyciskLosuj.removeEventListener('click', odliczanie);
+        
     }
     if(liczba ===4){
         los1.style.backgroundColor = grey1;
@@ -170,14 +190,26 @@ function losujPalete() {
 
         let greyPalete = [grey1,grey2, grey3, grey4, grey5, grey6, grey7, grey8];
         mainCard.style.backgroundColor = greyPalete[Math.floor(Math.random()*8)];
-    }
-
-    
+        przyciskLosuj.removeEventListener('click', losujPalete);
+        przyciskLosuj.removeEventListener('click', odliczanie);
+        
+    }   
 }
 
 function check(event){
-    
+   
     let colorCode = event.target.style.backgroundColor;
-    if(colorCode === mainCard.style.backgroundColor) {alert("Tak jest!To ten kolor!")}
-    else {alert("Przykro mi! To nie ten kolor")};
+    if(colorCode === mainCard.style.backgroundColor){
+        alert("Tak jest!To ten kolor!");
+        win = true;
+        przyciskLosuj.addEventListener('click', odliczanie);
+        przyciskLosuj.addEventListener('click', losujPalete)
+        sekunda = 0;
+    }
+    else {
+        
+        sekunda = sekunda + 30;
+        alert("Przykro mi! To nie ten kolor");
+    
+    }
 }
