@@ -14,17 +14,6 @@ let los6 = document.querySelector("#c6");
 let los7 = document.querySelector("#c7");
 let los8 = document.querySelector("#c8");
 
-los1.addEventListener('click',check);
-los2.addEventListener('click',check);
-los3.addEventListener('click',check);
-los4.addEventListener('click',check);
-los5.addEventListener('click',check);
-los6.addEventListener('click',check);
-los7.addEventListener('click',check);
-los8.addEventListener('click',check);
-
-
-
 let przyciskLosuj = document.querySelector('#losuj');
 przyciskLosuj.addEventListener('click', odliczanie);
 let licznik = document.querySelector("#czas");
@@ -34,8 +23,8 @@ function odliczanie(){
     win = false;
      
     function zegar(){
-        if(win){
-        clearInterval(timer);
+        if(win || liczba > 4){
+            clearInterval(timer);
         }
         else {   
            sekunda++;
@@ -58,6 +47,15 @@ function losujKolory2(h,s){
 
 przyciskLosuj.addEventListener('click', losujPalete);
 function losujPalete() {
+
+    los1.addEventListener('click',check);
+    los2.addEventListener('click',check);
+    los3.addEventListener('click',check);
+    los4.addEventListener('click',check);
+    los5.addEventListener('click',check);
+    los6.addEventListener('click',check);
+    los7.addEventListener('click',check);
+    los8.addEventListener('click',check);
     
     let green1 = losujKolory(80);
     let green2 = losujKolory(90);
@@ -108,8 +106,19 @@ function losujPalete() {
     
    
     if(liczba>4) {
+        licznik.innerHTML = "Zdobyłeś" + " " + "TYLE" + " " + "PUNKTÓW!";
         przyciskLosuj.innerHTML="koniec gry";
         przyciskLosuj.removeEventListener('click', losujPalete);
+        przyciskLosuj.removeEventListener('click', odliczanie);
+        los1.removeEventListener('click',check);
+        los2.removeEventListener('click',check);
+        los3.removeEventListener('click',check);
+        los4.removeEventListener('click',check);
+        los5.removeEventListener('click',check);
+        los6.removeEventListener('click',check);
+        los7.removeEventListener('click',check);
+        los8.removeEventListener('click',check);
+        
     }
    
     //mainCard.style.backgroundImage= background[liczba];
@@ -203,7 +212,15 @@ function check(event){
         alert("Tak jest!To ten kolor!");
         win = true;
         przyciskLosuj.addEventListener('click', odliczanie);
-        przyciskLosuj.addEventListener('click', losujPalete)
+        przyciskLosuj.addEventListener('click', losujPalete);
+        los1.removeEventListener('click',check);
+        los2.removeEventListener('click',check);
+        los3.removeEventListener('click',check);
+        los4.removeEventListener('click',check);
+        los5.removeEventListener('click',check);
+        los6.removeEventListener('click',check);
+        los7.removeEventListener('click',check);
+        los8.removeEventListener('click',check);
         sekunda = 0;
     }
     else {

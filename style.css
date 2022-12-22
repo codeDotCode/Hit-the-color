@@ -28,8 +28,7 @@ ul
 }
 main
 {
-    text-align:center;
-    
+    text-align:center;    
 }
 h1
 {
@@ -71,9 +70,7 @@ h2
     background-color: rgb(68, 45, 10);
 }
 #gra
-{
-    
-    
+{  
     text-align: center;
     padding: 100px;
     margin-top: 80px;
@@ -85,9 +82,7 @@ h2
     height: 400px;
     width: 300px;
     box-shadow: 8px 8px 24px 0px rgb(243, 242, 239);
-    border-radius: 15px;
-    
-      
+    border-radius: 15px;    
 }
 #kolory
 {
@@ -99,10 +94,8 @@ h2
     
 }
 .kolor
-{
-    
+{   
     box-shadow: 8px 8px 24px 0px rgb(247, 246, 245);
     margin: 0;
-    border-radius: 15px;
-    
+    border-radius: 15px;   
 }
