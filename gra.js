@@ -1,4 +1,4 @@
-//let background = ['url("colors/green.png")', 'url("colors/red.png")', 'url("colors/blue.png")', 'url("colors/yellow.png")', 'url("colors/grey.png")'];
+
 let mainCard = document.querySelector("#karta");
 let colorMain = mainCard.style.backgroundColor;
 let liczba = -1;
@@ -6,7 +6,8 @@ let win = false;
 let correct = new Audio("sound/correct.mp3");
 let wrong = new Audio("sound/wrong.mp3");
 let info = document.querySelector("#info");
-
+let licznik = document.querySelector("#czas");
+let milisekunda = 0;
 
 let los1 = document.querySelector("#c1");
 let los2 = document.querySelector("#c2");
@@ -19,8 +20,6 @@ let los8 = document.querySelector("#c8");
 
 let przyciskLosuj = document.querySelector('#losuj');
 przyciskLosuj.addEventListener('click', odliczanie);
-let licznik = document.querySelector("#czas");
-let milisekunda = 0;
 
 function odliczanie(){
     win = false;
@@ -106,26 +105,6 @@ function losujPalete() {
     let grey8 = losujKolory2(50,23);
 
     liczba++;
-    
-   
-    if(liczba>4) {
-        info.innerHTML = " ";
-        licznik.innerHTML = "Zdobyłeś" + " " + "TYLE" + " " + "PUNKTÓW!";
-        przyciskLosuj.innerHTML="FINISH";
-        przyciskLosuj.removeEventListener('click', losujPalete);
-        przyciskLosuj.removeEventListener('click', odliczanie);
-        los1.removeEventListener('click',check);
-        los2.removeEventListener('click',check);
-        los3.removeEventListener('click',check);
-        los4.removeEventListener('click',check);
-        los5.removeEventListener('click',check);
-        los6.removeEventListener('click',check);
-        los7.removeEventListener('click',check);
-        los8.removeEventListener('click',check);
-        
-    }
-   
-    //mainCard.style.backgroundImage= background[liczba];
     
     if(liczba ===0){
 
@@ -218,6 +197,21 @@ function losujPalete() {
         przyciskLosuj.removeEventListener('click', odliczanie);
         
     }   
+    if(liczba>4) {
+        info.innerHTML = " ";
+        licznik.innerHTML = "Zdobyłeś" + " " + "TYLE" + " " + "PUNKTÓW!";
+        przyciskLosuj.innerHTML="FINISH";
+        przyciskLosuj.removeEventListener('click', losujPalete);
+        przyciskLosuj.removeEventListener('click', odliczanie);
+        los1.removeEventListener('click',check);
+        los2.removeEventListener('click',check);
+        los3.removeEventListener('click',check);
+        los4.removeEventListener('click',check);
+        los5.removeEventListener('click',check);
+        los6.removeEventListener('click',check);
+        los7.removeEventListener('click',check);
+        los8.removeEventListener('click',check);
+    }
 }
 
 function check(event){
