@@ -3,6 +3,8 @@ let mainCard = document.querySelector("#karta");
 let colorMain = mainCard.style.backgroundColor;
 let liczba = -1;
 let win = false;
+let correct = new Audio("sound/correct.mp3");
+let wrong = new Audio("sound/wrong.mp3");
 
 
 let los1 = document.querySelector("#c1");
@@ -17,7 +19,7 @@ let los8 = document.querySelector("#c8");
 let przyciskLosuj = document.querySelector('#losuj');
 przyciskLosuj.addEventListener('click', odliczanie);
 let licznik = document.querySelector("#czas");
-let sekunda = 0;
+let milisekunda = 0;
 
 function odliczanie(){
     win = false;
@@ -27,8 +29,8 @@ function odliczanie(){
             clearInterval(timer);
         }
         else {   
-           sekunda++;
-            licznik.innerHTML= (sekunda/10).toFixed(1);
+            milisekunda++;
+            licznik.innerHTML= (milisekunda/10).toFixed(1);
         }
     }
     let timer = setInterval(zegar,100);
@@ -124,6 +126,8 @@ function losujPalete() {
     //mainCard.style.backgroundImage= background[liczba];
     
     if(liczba ===0){
+
+        przyciskLosuj.innerHTML= "TURN 1";
         los1.style.backgroundColor = green1;
         los2.style.backgroundColor = green2;
         los3.style.backgroundColor = green3;
@@ -140,6 +144,8 @@ function losujPalete() {
         
     }
     if(liczba ===1){
+
+        przyciskLosuj.innerHTML= "TURN 2";
         los1.style.backgroundColor = red1;
         los2.style.backgroundColor = red2;
         los3.style.backgroundColor = red3;
@@ -156,6 +162,8 @@ function losujPalete() {
         
     }
     if(liczba ===2){
+
+        przyciskLosuj.innerHTML= "TURN 3";
         los1.style.backgroundColor = blue1;
         los2.style.backgroundColor = blue2;
         los3.style.backgroundColor = blue3;
@@ -172,6 +180,8 @@ function losujPalete() {
         
     }
     if(liczba ===3){
+
+        przyciskLosuj.innerHTML= "TURN 4";
         los1.style.backgroundColor = yellow1;
         los2.style.backgroundColor = yellow2;
         los3.style.backgroundColor = yellow3;
@@ -188,6 +198,8 @@ function losujPalete() {
         
     }
     if(liczba ===4){
+
+        przyciskLosuj.innerHTML= "TURN 5";
         los1.style.backgroundColor = grey1;
         los2.style.backgroundColor = grey2;
         los3.style.backgroundColor = grey3;
@@ -209,7 +221,8 @@ function check(event){
    
     let colorCode = event.target.style.backgroundColor;
     if(colorCode === mainCard.style.backgroundColor){
-        alert("Tak jest!To ten kolor!");
+        correct.play();
+        
         win = true;
         przyciskLosuj.addEventListener('click', odliczanie);
         przyciskLosuj.addEventListener('click', losujPalete);
@@ -221,12 +234,13 @@ function check(event){
         los6.removeEventListener('click',check);
         los7.removeEventListener('click',check);
         los8.removeEventListener('click',check);
-        sekunda = 0;
+        milisekunda = 0;
+        przyciskLosuj.innerHTML= "NEXT TURN";
     }
     else {
+        wrong.play();
+        milisekunda = milisekunda + 30;
         
-        sekunda = sekunda + 30;
-        alert("Przykro mi! To nie ten kolor");
     
     }
 }
