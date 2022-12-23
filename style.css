@@ -73,7 +73,7 @@ h2
 {  
     text-align: center;
     padding: 100px;
-    margin-top: 80px;
+    margin-top: 20px;
     display: flex;
     gap: 150px;
 }
@@ -85,17 +85,22 @@ h2
     border-radius: 15px;    
 }
 #kolory
-{
-    
+{   
     flex: 1;
     display: grid;
     gap:40px;
     grid-template-columns: repeat(4, 1fr);
-    
+    text-align: center;       
 }
 .kolor
 {   
     box-shadow: 8px 8px 24px 0px rgb(247, 246, 245);
     margin: 0;
     border-radius: 15px;   
+}
+#info
+{
+    margin-top: 30px;
+    font-size: 3em;
+
 }

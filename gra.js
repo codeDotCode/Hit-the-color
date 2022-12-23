@@ -5,6 +5,7 @@ let liczba = -1;
 let win = false;
 let correct = new Audio("sound/correct.mp3");
 let wrong = new Audio("sound/wrong.mp3");
+let info = document.querySelector("#info");
 
 
 let los1 = document.querySelector("#c1");
@@ -108,8 +109,9 @@ function losujPalete() {
     
    
     if(liczba>4) {
+        info.innerHTML = " ";
         licznik.innerHTML = "Zdobyłeś" + " " + "TYLE" + " " + "PUNKTÓW!";
-        przyciskLosuj.innerHTML="koniec gry";
+        przyciskLosuj.innerHTML="FINISH";
         przyciskLosuj.removeEventListener('click', losujPalete);
         przyciskLosuj.removeEventListener('click', odliczanie);
         los1.removeEventListener('click',check);
@@ -127,6 +129,7 @@ function losujPalete() {
     
     if(liczba ===0){
 
+        
         przyciskLosuj.innerHTML= "TURN 1";
         los1.style.backgroundColor = green1;
         los2.style.backgroundColor = green2;
@@ -144,7 +147,7 @@ function losujPalete() {
         
     }
     if(liczba ===1){
-
+        info.innerHTML = "?";
         przyciskLosuj.innerHTML= "TURN 2";
         los1.style.backgroundColor = red1;
         los2.style.backgroundColor = red2;
@@ -162,7 +165,7 @@ function losujPalete() {
         
     }
     if(liczba ===2){
-
+        info.innerHTML = "?";
         przyciskLosuj.innerHTML= "TURN 3";
         los1.style.backgroundColor = blue1;
         los2.style.backgroundColor = blue2;
@@ -180,7 +183,7 @@ function losujPalete() {
         
     }
     if(liczba ===3){
-
+        info.innerHTML = "?";
         przyciskLosuj.innerHTML= "TURN 4";
         los1.style.backgroundColor = yellow1;
         los2.style.backgroundColor = yellow2;
@@ -198,7 +201,7 @@ function losujPalete() {
         
     }
     if(liczba ===4){
-
+        info.innerHTML = "?";
         przyciskLosuj.innerHTML= "TURN 5";
         los1.style.backgroundColor = grey1;
         los2.style.backgroundColor = grey2;
@@ -221,8 +224,8 @@ function check(event){
    
     let colorCode = event.target.style.backgroundColor;
     if(colorCode === mainCard.style.backgroundColor){
+        info.innerHTML = "CORRECT!";
         correct.play();
-        
         win = true;
         przyciskLosuj.addEventListener('click', odliczanie);
         przyciskLosuj.addEventListener('click', losujPalete);
@@ -238,6 +241,7 @@ function check(event){
         przyciskLosuj.innerHTML= "NEXT TURN";
     }
     else {
+        info.innerHTML = "WRONG";
         wrong.play();
         milisekunda = milisekunda + 30;
         
