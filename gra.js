@@ -1,13 +1,19 @@
 
 let mainCard = document.querySelector("#karta");
 let colorMain = mainCard.style.backgroundColor;
-let liczba = -1;
+let runda = -1;
 let win = false;
 let correct = new Audio("sound/correct.mp3");
 let wrong = new Audio("sound/wrong.mp3");
 let info = document.querySelector("#info");
 let licznik = document.querySelector("#czas");
 let milisekunda = 0;
+let podliczenie = document.querySelector("#wynik");
+let punkty = [0, 0, 0, 0, 0];
+
+
+
+
 
 let los1 = document.querySelector("#c1");
 let los2 = document.querySelector("#c2");
@@ -21,12 +27,16 @@ let los8 = document.querySelector("#c8");
 let przyciskLosuj = document.querySelector('#losuj');
 przyciskLosuj.addEventListener('click', odliczanie);
 
+
+
 function odliczanie(){
     win = false;
      
     function zegar(){
-        if(win || liczba > 4){
+        if(win || runda > 4){
+            
             clearInterval(timer);
+            
         }
         else {   
             milisekunda++;
@@ -49,6 +59,8 @@ function losujKolory2(h,s){
 
 przyciskLosuj.addEventListener('click', losujPalete);
 function losujPalete() {
+
+    
 
     los1.addEventListener('click',check);
     los2.addEventListener('click',check);
@@ -104,9 +116,9 @@ function losujPalete() {
     let grey7 = losujKolory2(50,20);
     let grey8 = losujKolory2(50,23);
 
-    liczba++;
+    runda++;
     
-    if(liczba ===0){
+    if(runda ===0){
 
         
         przyciskLosuj.innerHTML= "TURN 1";
@@ -124,8 +136,11 @@ function losujPalete() {
         przyciskLosuj.removeEventListener('click', losujPalete);
         przyciskLosuj.removeEventListener('click', odliczanie);
         
+       
+        
+        
     }
-    if(liczba ===1){
+    if(runda ===1){
         info.innerHTML = "?";
         przyciskLosuj.innerHTML= "TURN 2";
         los1.style.backgroundColor = red1;
@@ -142,8 +157,9 @@ function losujPalete() {
         przyciskLosuj.removeEventListener('click', losujPalete);
         przyciskLosuj.removeEventListener('click', odliczanie);
         
+        
     }
-    if(liczba ===2){
+    if(runda ===2){
         info.innerHTML = "?";
         przyciskLosuj.innerHTML= "TURN 3";
         los1.style.backgroundColor = blue1;
@@ -160,8 +176,9 @@ function losujPalete() {
         przyciskLosuj.removeEventListener('click', losujPalete);
         przyciskLosuj.removeEventListener('click', odliczanie);
         
+        
     }
-    if(liczba ===3){
+    if(runda ===3){
         info.innerHTML = "?";
         przyciskLosuj.innerHTML= "TURN 4";
         los1.style.backgroundColor = yellow1;
@@ -179,7 +196,7 @@ function losujPalete() {
         przyciskLosuj.removeEventListener('click', odliczanie);
         
     }
-    if(liczba ===4){
+    if(runda ===4){
         info.innerHTML = "?";
         przyciskLosuj.innerHTML= "TURN 5";
         los1.style.backgroundColor = grey1;
@@ -196,10 +213,11 @@ function losujPalete() {
         przyciskLosuj.removeEventListener('click', losujPalete);
         przyciskLosuj.removeEventListener('click', odliczanie);
         
+        
     }   
-    if(liczba>4) {
+    if(runda>4) {
         info.innerHTML = " ";
-        licznik.innerHTML = "Zdobyłeś" + " " + "TYLE" + " " + "PUNKTÓW!";
+        
         przyciskLosuj.innerHTML="FINISH";
         przyciskLosuj.removeEventListener('click', losujPalete);
         przyciskLosuj.removeEventListener('click', odliczanie);
@@ -212,13 +230,15 @@ function losujPalete() {
         los7.removeEventListener('click',check);
         los8.removeEventListener('click',check);
     }
+    
 }
 
 function check(event){
-   
+    
     let colorCode = event.target.style.backgroundColor;
     if(colorCode === mainCard.style.backgroundColor){
         info.innerHTML = "CORRECT!";
+        
         correct.play();
         win = true;
         przyciskLosuj.addEventListener('click', odliczanie);
@@ -233,12 +253,41 @@ function check(event){
         los8.removeEventListener('click',check);
         milisekunda = 0;
         przyciskLosuj.innerHTML= "NEXT TURN";
-    }
-    else {
-        info.innerHTML = "WRONG";
-        wrong.play();
-        milisekunda = milisekunda + 30;
         
-    
+        
+        
+        
+        punkty[runda]=roundScore(Number(licznik.innerHTML));
+       
+        
+        let li = document.createElement("li");
+        podliczenie.appendChild(li);
+        podliczenie.lastChild.innerHTML =  punkty[runda];
+
+        
+
+        if(runda>=4){
+            let suma = 0;
+            for(i=0; i<punkty.length; i++){
+                suma = suma + punkty[i];
+            }
+            licznik.innerHTML = "Zdobyłeś" + " " + suma + " " + "PUNKTÓW!";
+            
+        }
     }
+     else {
+         info.innerHTML = "WRONG";
+         wrong.play();
+         milisekunda = milisekunda + 30;
+     }
+    
+}
+function roundScore(czasrundy){
+    
+    const rundaMax = 200;
+    const rundaMin = 20;
+    if(czasrundy<1){
+        return rundaMax;
+    } 
+    return Math.max(rundaMin,rundaMax - (czasrundy * 20));
 }
