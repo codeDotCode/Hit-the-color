@@ -271,8 +271,10 @@ function check(event){
             for(i=0; i<punkty.length; i++){
                 suma = suma + punkty[i];
             }
-            licznik.innerHTML = "Zdobyłeś" + " " + suma + " " + "PUNKTÓW!";
-            
+            licznik.textContent = "Zdobyłeś" + " " + suma + " " + "PUNKTÓW!";
+            przyciskLosuj.innerHTML= "NEW GAME";
+            przyciskLosuj.addEventListener('click',restart);
+            info.innerHTML = "BRAWO!"
         }
     }
      else {
@@ -290,4 +292,7 @@ function roundScore(czasrundy){
         return rundaMax;
     } 
     return Math.max(rundaMin,rundaMax - (czasrundy * 20));
+}
+function restart(){
+    location.reload();
 }
