@@ -19,12 +19,13 @@ ul
     padding: 15px;
     
 }
-#menu>li
+#menu li
 {
     display: inline-block;
     margin-left: 70px;
+    cursor: pointer;
 }
-#menu>li:first-child
+#menu li:first-child
 {
     margin-left: 0px;
 }
@@ -59,7 +60,17 @@ h2
     border: none;
     border-radius: 10px;
     padding:8px 30px;
-    
+    cursor: pointer;
+}
+
+#losuj:hover {
+    color: rgb(76, 219, 40);
+    box-shadow: 0px 0px 10px 0px rgb(5, 112, 37);
+}
+
+#losuj:active {
+    background-color:rgb(76, 219, 40);
+    color: white;
 }
 #czas
 {
@@ -77,6 +88,7 @@ h2
 }
 #gra
 {  
+    position: relative;
     text-align: center;
     padding: 100px;
     margin-top: 20px;
@@ -88,7 +100,7 @@ h2
     height: 400px;
     width: 300px;
     box-shadow: 0px 0px 24px 0px rgba(243, 242, 239, 1);
-    border-radius: 15px;    
+    border-radius: 15px;
 }
 #kolory
 {   
